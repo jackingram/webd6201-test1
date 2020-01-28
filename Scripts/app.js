@@ -37,12 +37,19 @@ let app;
 
         //add personal student info (name and student id to a new h3 element and insert it before the large button)
         let h3Element = document.createElement("h3");
-        let mainDivContent = document.getElementById("mainContent");
+        let childDivContent= document.getElementById("contentArea");
         h3Element.textContent = "[Jack Ingram] [100710241]";
-        .insertBefore(h3Element, buttonElement);
+        childDivContent.insertBefore(h3Element, buttonElement);
         console.log(buttonElement);
 
+        //change paragraph contents of the id =  firstParagraph
+        let firstParagraph = document.getElementById("firstParagraph");
+        firstParagraph.textContent = "JavaScript is a prototype-based language, and every object in "
+        + "JavaScript has a hidden internal property called Prototype that can be used to extend "
+        + "object properties and methods."
 
+        //hide element with the id = firstParagraph
+        firstParagraph.style.display = "none";
 
     }
 
