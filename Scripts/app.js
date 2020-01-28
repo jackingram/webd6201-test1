@@ -11,16 +11,9 @@
 let app;
 (function(app){
 
-    // Declare Function Variables here...
-    console.log("%cDeclaring Variables", "color: red;")
-
-    /**
-     * Variable initialization in this function
-     *
-     */
     function Start()
     {
-
+        
 
         Main();
     }
@@ -38,9 +31,8 @@ let app;
         //add personal student info (name and student id to a new h3 element and insert it before the large button)
         let h3Element = document.createElement("h3");
         let childDivContent= document.getElementById("contentArea");
-        h3Element.textContent = "[Jack Ingram] [100710241]";
+        h3Element.textContent = "Jack Ingram 100710241";
         childDivContent.insertBefore(h3Element, buttonElement);
-        console.log(buttonElement);
 
         //change paragraph contents of the id =  firstParagraph
         let firstParagraph = document.getElementById("firstParagraph");
@@ -51,6 +43,20 @@ let app;
         //hide element with the id = firstParagraph
         firstParagraph.style.display = "none";
 
+        //event listener for mouse click on the large button element with a function to hide paragraph element depending on the buttons text content.
+        buttonElement.addEventListener("click", function(){
+            if(buttonElement.textContent == "Learn More")
+            {
+                firstParagraph.style.display = "block";
+                buttonElement.textContent = "Hide Details";
+            }
+            else if (buttonElement.textContent == "Hide Details")
+            {
+              firstParagraph.style.display = "none";
+              buttonElement.textContent = "Learn More";
+            }
+        });
+    
     }
 
 
